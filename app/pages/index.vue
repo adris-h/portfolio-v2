@@ -5,8 +5,8 @@
 </script>
 
 <template>
-  <div class="relative z-10">
-    Hello
+  <div class="w-full relative z-10">
+
   </div>
 </template>
 

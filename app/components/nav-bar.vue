@@ -68,16 +68,16 @@
 </script>
 <template>
   <nav class="fixed top-0 left-0 z-50 w-full">
-    <div class="w-full relative bg-text text-background flex justify-between items-center px-navx">
+    <div class="w-full relative h-16 bg-text text-background flex justify-between items-center ">
       <!--LOGO LINK -->
-      <NuxtLink class="cursor-pointer group text-xl w-1/3 flex justify-start" to="/">
-      <span v-for="(char, index) in titleLink" :key="index" class="inline-block group-hover:-translate-x-2 group-hover:text-accent group-hover:scale-[1.1] duration-300 " :style="{ transitionDelay: `${index * 30}ms` }">
-        {{ char }} <!-- EACH CHAR -->
-      </span>
+      <NuxtLink class="cursor-pointer group text-xl bg-text h-full z-10 w-1/3 flex justify-start px-navx py-navy items-center" to="/">
+        <span v-for="(char, index) in titleLink" :key="index" class="inline-block group-hover:-translate-x-2 group-hover:text-accent group-hover:scale-[1.1] duration-300 " :style="{ transitionDelay: `${index * 30}ms` }">
+          {{ char }} <!-- EACH CHAR -->
+        </span>
       </NuxtLink>
 
       <!-- HAMBURGER-->
-      <div class="relative z-10 flex justify-center items-center w-full h-full bg-text text-background px-navx py-navy">
+      <div class="relative z-10 flex justify-end md:justify-center items-center md:w-96 w-full h-full bg-text text-background px-navx py-navy">
         <button
             class="relative w-8 aspect-square cursor-pointer animate-hamburger"
             @click="toggleMenu"
@@ -95,7 +95,7 @@
 
       <!-- MENU -->
       <div class="select-none absolute top-full left-0 w-full z-0 flex flex-col items-center">
-        <div class=" group/menu flex flex-col justify-center items-center gap-0 text-2xl">
+        <div class=" group/menu flex flex-col w-full justify-center items-center gap-0 text-2xl">
           <GSAPTransition group :hidden="{ yPercent: -200, opacity: 0.8, ease: 'expo.inOut'  }" :stagger="0.15" :duration=".8">
             <NuxtLink
                 v-for="(link, idx) in (menuOpen ? links : [])"
@@ -103,7 +103,7 @@
                 :key="link.to"
                 :data-index="closing ? links.length - 1 - idx : idx"
                 :to="link.to"
-                class=" group relative text-background  w-96 flex justify-center pt-4 pb-6   rounded-lg"
+                class=" group relative text-background w-full md:w-96  flex justify-center pt-4 pb-6   md:rounded-lg"
                 :class="[link.bg, link.bgHover]"
                 :style="{ zIndex: link.z }"
                 style="transition: 300ms background, 300ms color"
@@ -135,12 +135,12 @@
       <!-- TIME -->
 
       <NuxtLink
-          class="flex gap-4 w-1/3 justify-end items-center cursor-pointer"
+          class="md:flex gap-4 w-1/3 hidden md:visible bg-text px-navx py-navy h-full z-10 justify-end items-center cursor-pointer"
           @mouseenter="hoverOverTime = true"
           @mouseleave="hidePopup"
       >
-        <span class="text-muted">my time</span>
-        <span>{{currentTimeCZ}}</span>
+        <span class="text-muted w-fit">my time</span>
+        <span class="w-fit">{{currentTimeCZ}}</span>
       </NuxtLink>
 
 
