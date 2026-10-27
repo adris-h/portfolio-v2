@@ -26,6 +26,7 @@
 html, body {
     @apply font-default bg-background;
     min-height: 100vh;
+    height: 300vh;
 
 }
 
