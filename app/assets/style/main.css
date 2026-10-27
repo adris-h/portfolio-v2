@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@theme{
+    --color-background: #F9F7F0;
+    --color-text: #201F1F;
+    --color-accent: #FF5D00;
+    --color-muted: #C7C6C0;
+    --color-faint: #F4F3EC;
+    --color-text-muted: #262626;
+
+    --font-default: "minute", sans-serif;
+    --animate-fade: fadeIn 500ms;
+    --spacing-navx: 2rem;
+    --spacing-navy: 1rem;
+
+
+    --animate-hamburger: hamburger 300ms ease-in-out;
+    --animate-slide-down: slideDown 300ms ease-in-out;
+
+}
+
+::selection {
+    background: var(--color-accent);
+    color: var(--color-background);
+}
+
+html, body {
+    @apply font-default bg-background;
+    min-height: 100vh;
+
+}
+
+:root {
+    font-size: 20px;
+}
+
+#__nuxt{
+    @apply w-full h-full;
+    min-height: 100vh;
+}
+
+
+@keyframes fadeIn {
+    from  {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes hamburger {
+    0% {
+        span{
+            background-color: var(--color-background)
+        }
+
+    }
+    50% {
+        span{
+            background-color: var(--color-accent)
+        }
+    }
+    100% {
+        span{
+            background-color: var(--color-background)
+        }
+    }
+}
+
+@keyframes slideDown {
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
