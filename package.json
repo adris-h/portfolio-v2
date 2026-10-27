@@ -25,6 +25,6 @@
     "unrs-resolver@1.12.2": true
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.3"
+    "@tailwindcss/vite": "^4.3.3"
   }
 }

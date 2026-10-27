@@ -1,14 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/image', 'v-gsap-nuxt'],
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/style/main.css'],
-  postcss: {
-    plugins: {
-      '@tailwindcss/postcss': {},
-      autoprefixer: {}
-    }
+  vite: {
+    plugins: [tailwindcss()]
   },
   app: {
     head: {
