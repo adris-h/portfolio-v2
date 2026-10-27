@@ -70,7 +70,7 @@
   <nav class="fixed top-0 left-0 z-50 w-full">
     <div class="w-full relative h-16 bg-text text-background flex justify-between items-center ">
       <!--LOGO LINK -->
-      <NuxtLink class="cursor-pointer group text-xl bg-text h-full z-10 w-1/3 flex justify-start px-navx py-navy items-center" to="/">
+      <NuxtLink class="cursor-pointer group text-xl bg-text h-full z-20 w-1/3 flex justify-start px-navx py-navy items-center" to="/">
         <span v-for="(char, index) in titleLink" :key="index" class="inline-block group-hover:-translate-x-2 group-hover:text-accent group-hover:scale-[1.1] duration-300 " :style="{ transitionDelay: `${index * 30}ms` }">
           {{ char }} <!-- EACH CHAR -->
         </span>
@@ -147,7 +147,7 @@
 
 
       <div
-          class="z-100 -translate-x-full flex flex-col"
+          class="z-100 -translate-x-full flex flex-col gap-0.5"
           :style="{ position: 'fixed', top: `${mouseY + offset}px`, left: `${Math.max(0, mouseX + offset * 2)}px` }"
       >
         <GSAPTransition group  :hidden="{scale: 0.8, ease: 'back.out(2.5)'} " :stagger=".3" :duration=".3" >
@@ -155,7 +155,7 @@
              v-if="hoverOverTime"
              key="a"
              :data-index="0"
-             class="px-2 whitespace-nowrap pointer-events-none bg-accent rounded-sm "
+             class="px-2 whitespace-nowrap pointer-events-none bg-accent rounded-sm -rotate-1"
          >
             i reply within 24 hours (pinkie promise)
           </span>
@@ -164,9 +164,9 @@
               key="b"
               :data-index="popupClosing ? 0 : 1"
 
-              class="px-2 whitespace-nowrap pointer-events-none w-fit bg-text-muted rounded-sm"
+              class="px-2 whitespace-nowrap pointer-events-none w-fit -rotate-1 bg-text-muted rounded-sm"
           >
-            wsp
+            usually online between 18:00 - 22:00
           </span>
         </GSAPTransition>
       </div>
